@@ -5,9 +5,9 @@
 // with some form of visibility control if you were building a larger shared library.
 // For cffi, just the declarations are often enough.
 
-int graph(int var_url, int var_host, int var_path, int var_request);
-int mesh(const char *input, char *output, const char *key);
-int index(int var_a);
-int (char var_encrypt);
+int graph();
+int mesh();
+int index();
+int geometrical_output();
 
 #endif // FUNC_H
