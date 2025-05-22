@@ -4,27 +4,21 @@ from _default_cffi import ffi, lib
 # lib contains the C functions we defined via cdef
 # ffi can be used for more advanced cffi features (like 
 
-### AI ###
 
+def mesh(i,y,k,p):
 
-### AI ###
+    return lib.mesh(i,y,k,p)
 
-### MOD ###
+def index(a,b):
 
-def httpSearch(i,y,k,p):
+    return lib.index(a, b)
 
-    return lib.httpSearch(i,y,k,p)
-
-    def xordecrypt(a,b):
-
-    			return lib.xordecrypt(a, b, c)
-
-                def data_lambda(h):
+def geometrical_output(h):
                 			
-                            			return lib.data_lambda(h,m)
+    return lib.geometrical_output(h,x)
 
-                                        def decrypt_lambda(x):
+def graph(x):
                                             
-                                                return lib.decrypt_lambda(x)
+    return lib.graph(x)
 
-                                                 ### MOD ###
+                                                 
