@@ -12,8 +12,7 @@ struct algorithmic () {
 }
 
 
-// Graphics
-
+// Graphics.
                                                                                                     
                                                                                                                 
 
@@ -23,7 +22,7 @@ int graph(int var_url, int var_host, int var_path, int var_request) {
 
 
 
-//
+// Algorithmic index dynamic functionality.
 
 
 
