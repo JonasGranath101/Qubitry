@@ -16,11 +16,11 @@ struct algorithmic () {
 }
 
 
-// Graphics.
+// Graphics, for object data.
                                                                                                     
                                                                                                                 
 
-int graph(int var_url, int var_host, int var_path, int var_request) {
+int graph() {
                                                          
 }
 
@@ -30,11 +30,14 @@ int graph(int var_url, int var_host, int var_path, int var_request) {
 
 
 
-int index() {
+int index( char str ) {
+
 
 // LLMs to object identification.
 
+
 // Object algorithmic process in mesh.
+
                                                         
 }
 
