@@ -5,19 +5,43 @@
 #include <iostream>
 #include <Eigen/Dense> // For Matrix, Vector, and solvers
 
-
-int mesh() {
-
-}
-
-
 struct algorithmic () {
 
-
-
+char Search;
 
 
 }
+
+
+int solve( char problem ) {
+
+// LLMs to object identification
+
+if ((char problem)==Search) {
+
+return 0;
+}
+
+
+// Object algorithmic process in mesh.
+
+// For example, using QR decomposition:
+Eigen::Vector3d x_qr = A.colPivHouseholderQr().solve(b);
+std::cout << "\nSolution x (QR decomposition):\n" << x_qr << std::endl;
+
+// Problem solve geometry.
+
+// For least squares problems (e.g., A is not square, or system is overdetermined)
+    // Create an overdetermined system (more rows than columns)
+Eigen::MatrixXd A_ls(4, 2);
+A_ls << 1, 1,
+            2, 3,
+            3, 2,
+            4, 4;
+
+}
+
+
 
 
 // Graphics, for object data.
@@ -80,29 +104,14 @@ int graph( char data ) {
 
 
 
-int index( char str ) {
+int geometry( char str ) {
 
 
-// LLMs to object identification
+char Search = str;
 
 
-
-// Object algorithmic process in mesh.
-
-// For example, using QR decomposition:
-Eigen::Vector3d x_qr = A.colPivHouseholderQr().solve(b);
-std::cout << "\nSolution x (QR decomposition):\n" << x_qr << std::endl;
-
-// Problem solve geometry.
-
-// For least squares problems (e.g., A is not square, or system is overdetermined)
-    // Create an overdetermined system (more rows than columns)
-Eigen::MatrixXd A_ls(4, 2);
-A_ls << 1, 1,
-            2, 3,
-            3, 2,
-            4, 4;
-                                                        
+solve();
+                                             
 }
 
 
