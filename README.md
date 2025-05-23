@@ -6,4 +6,4 @@
 # Core fundamentals
 
 • Geometrical AI solving write, as .obj file data.
-• Graphing output.
+n\• Graphing output.
