@@ -2,8 +2,8 @@
 
 ### MOD ###
 
-from .core import mesh, geometrical_output, index, graph
+from .core import output, index, graph
 
-__all__ = ['mesh', 'geometrical_output', 'index', 'graph']
+__all__ = ['output', 'index', 'graph']
 
 ### MOD ###
