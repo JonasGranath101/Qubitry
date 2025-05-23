@@ -7,6 +7,6 @@
 
 int graph( char data );
 int index( char str );
-int geometrical_output();
+int output();
 
 #endif // FUNC_H
