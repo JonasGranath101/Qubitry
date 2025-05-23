@@ -6,7 +6,7 @@
 // For cffi, just the declarations are often enough.
 
 int graph( char data );
-int index( char str );
+int geometry( char str );
 int output();
 
 #endif // FUNC_H
