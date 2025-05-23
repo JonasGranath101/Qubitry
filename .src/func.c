@@ -47,7 +47,7 @@ int index( char str ) {
 
 
 
-int geometrical_output() {
+int output() {
 
 }
                                              
