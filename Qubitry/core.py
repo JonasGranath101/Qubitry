@@ -1,5 +1,5 @@
 # Import the CFFI-generated module and the ffi object
-from _default_cffi import ffi, lib
+from _func_cffi import ffi, lib
 
 # lib contains the C functions we defined via cdef
 # ffi can be used for more advanced cffi features (like 
