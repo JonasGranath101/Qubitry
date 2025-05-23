@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+int mesh() {
+
+}
+
 
 struct algorithmic () {
 
@@ -27,12 +31,16 @@ int graph(int var_url, int var_host, int var_path, int var_request) {
 
 
 int index() {
+
+// LLMs to object identification.
+
+// Object algorithmic process in mesh.
                                                         
 }
 
 
 
-//
+// Output object as ".obj" file data.
 
 
 
@@ -41,12 +49,8 @@ int geometrical_output() {
 }
                                              
 
-// 
 
 
-int mesh() {
-
-}
 
 
 
