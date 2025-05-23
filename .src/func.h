@@ -5,9 +5,8 @@
 // with some form of visibility control if you were building a larger shared library.
 // For cffi, just the declarations are often enough.
 
-int graph();
-int mesh();
-int index();
+int graph( char data );
+int index( char str );
 int geometrical_output();
 
 #endif // FUNC_H
