@@ -20,7 +20,7 @@ struct algorithmic () {
                                                                                                     
                                                                                                                 
 
-int graph() {
+int graph( char data ) {
                                                          
 }
 
