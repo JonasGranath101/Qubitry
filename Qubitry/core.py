@@ -7,13 +7,13 @@ from _func_cffi import ffi, lib
 
 
 
-def index(a,b):
+def geometry(a,b):
 
-    return lib.index(a, b)
+    return lib.geometry(a, b)
 
 def output():
                 			
-    return lib.geometrical_output()
+    return lib.output()
 
 def graph(x):
                                             
