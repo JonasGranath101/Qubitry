@@ -5,17 +5,15 @@ from _default_cffi import ffi, lib
 # ffi can be used for more advanced cffi features (like 
 
 
-def mesh(i,y,k,p):
 
-    return lib.mesh(i,y,k,p)
 
 def index(a,b):
 
     return lib.index(a, b)
 
-def geometrical_output(h):
+def output():
                 			
-    return lib.geometrical_output(h,x)
+    return lib.geometrical_output()
 
 def graph(x):
                                             
