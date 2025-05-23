@@ -3,6 +3,7 @@ from cffi import FFI
 ffibuilder = FFI()
 
 ffibuilder.cdef("""
+
     int graph( char data );
     int index( char str );
     int output();
