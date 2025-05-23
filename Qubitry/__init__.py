@@ -2,8 +2,8 @@
 
 ### MOD ###
 
-from .core import output, index, graph
+from .core import output, geometry, graph
 
-__all__ = ['output', 'index', 'graph']
+__all__ = ['output', 'geometry', 'graph']
 
 ### MOD ###
