@@ -3,10 +3,9 @@ from cffi import FFI
 ffibuilder = FFI()
 
 ffibuilder.cdef("""
-    int graph(int var_url, int var_host, int var_path, int var_request);
-    int index(const char *input, char *output, const char *key);
-    int geometrical_output(int var_a);
-    int mesh(char var_encrypt);
+    int graph( char data );
+    int index( char str );
+    int output();
 
 """)
 
