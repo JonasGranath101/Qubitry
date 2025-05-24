@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include <emsccripten.h>
+
 #include <iostream>
 #include <Eigen/Dense> // For Matrix, Vector, and solvers
 
