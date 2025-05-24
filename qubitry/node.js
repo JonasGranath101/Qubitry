@@ -1,19 +1,31 @@
-// Example: A simple utility function
-function greet(name) {
-  return `Hello, ${name}! Welcome to my awesome package.`;
-  }
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Embind Example</title>
+</head>
+<body>
+    <script src="embind_example.js"></script>
+    <script>
+        Module.onRuntimeInitialized = function() {
+            console.log("JavaScript: Embind Runtime Initialized!");
 
-function add(a, b) {
-    return a + b;
-    }
+            // Create an instance of MyClass from JavaScript
+            let myInstance = new Module.MyClass(42);
 
-    // Export the functions you want to make public
-    // CommonJS (for Node.js environments and older bundlers)
-module.exports = {
-      greet,
-        add
+            console.log("Initial X:", myInstance.getX()); // Output: 42
+
+            myInstance.setX(100);
+            console.log("New X:", myInstance.getX()); // Output: 100
+
+            let greeting = myInstance.greet("World");
+            console.log("Greeting:", greeting); // Output: "Hello, World! My X is 100"
+
+            // Remember to delete instances created in JS if you want to free memory explicitly
+            // (though for simple cases, GC will eventually handle it if not stored)
+            myInstance.delete();
+            console.log("Instance deleted.");
         };
-
-        // ES Modules (for modern browsers and bundlers)
-        // If you are targeting ES modules primarily, you might want to set "type": "module" in package.json
-        // export { greet, add };
+    </script>
+</body>
+</html>
