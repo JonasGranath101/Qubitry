@@ -7,8 +7,12 @@ definition = function() {
 const { text } = await generateText({
   model: openai('gpt-4o'),
   system: 'You are a friendly assistant!',
-  prompt: 'Why is the sky blue?',
+  prompt: 'Define the shape ' + shape + '',
 }); 
+
+}
+
+AI_Key = function() {
 
 }
 
