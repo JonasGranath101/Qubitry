@@ -92,12 +92,15 @@ int main() {
 
 int graph( char data ) {
 
+if (data ) {
+
 // Write graph 3D object with vertex coordinates.
 
 
 main()
 
 
+} else {
 
 // AI alternative. Harder geometries.
 
@@ -148,6 +151,7 @@ main()
     std::cout << "\nLeast squares solution x_ls:\n" << x_ls << std::endl;
 
     return 0;           
+}
 }
 
 
