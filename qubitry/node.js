@@ -37,7 +37,7 @@ const { definition } = shape_data.map()
 
 
 
-Initiation = function () {
+UI = function () {
 
 const newWindow = window.open('', '_blank', 'width=600,height=400');
 newWindow.document.write(`
@@ -53,3 +53,9 @@ newWindow.document.close();  // Important to finish writing and render the conte
 
 
 };
+
+output = function() {
+
+
+
+}
