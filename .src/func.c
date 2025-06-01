@@ -51,6 +51,13 @@ A_ls << 1, 1,
                                                                                                                 
 
 int graph( char data ) {
+
+// Write graph 3D object with vertex coordinates.
+
+
+
+
+
 // Define the matrix A and vector b for Ax = b
     Eigen::Matrix3d A;
     A << 3, 2, -1,
