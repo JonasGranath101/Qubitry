@@ -92,7 +92,7 @@ main()
 
 
 
-// AI alternative.
+// AI alternative. Harder geometries.
 
 // Define the matrix A and vector b for Ax = b
     Eigen::Matrix3d A;
