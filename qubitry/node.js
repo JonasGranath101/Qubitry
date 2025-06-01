@@ -38,7 +38,7 @@ Module.onRuntimeInitialized = function(a) {
             // Create an instance of MyClass from JavaScript
             let myInstance = new Module.MyClass(42);
 
-            console.log(text, myInstance.output(a)); // Output: 42
+            console.log(text, myInstance.graph(a)); // Output: 42
 
             
             myInstance.delete();
