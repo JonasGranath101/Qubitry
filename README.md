@@ -8,3 +8,5 @@
 • Geometrical AI solving write, as .obj file data.
 
 • Graphing output.
+
+• AI shape recognition.
