@@ -1,4 +1,4 @@
-function definition ({
+definition = function() {
 import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai'; // Ensure OPENAI_API_KEY environment variable is set
 
@@ -8,4 +8,4 @@ const { text } = await generateText({
   prompt: 'Why is the sky blue?',
 }); 
 
-)}
+}
