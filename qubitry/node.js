@@ -11,7 +11,7 @@ const { obj } = "";
 
 AI_Key = function() {
 
-AI_Key = prompt("AI API key ")
+AI_Key = prompt("AI API key :")
   
 };
 
@@ -21,7 +21,7 @@ Identify = function() {
 
 
 
-const { shape } = prompt('Shape to define ');
+const { shape } = prompt('Shape to define :');
 
 const { text } = await generateText({
   model: openai('gpt-4o'),
