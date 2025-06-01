@@ -4,6 +4,7 @@ let { AI_key } = "";
 
 import { openai } from '@ai-sdk/openai'; // Ensure OPENAI_API_KEY environment variable is set
 
+const { shape } = "";
 
 
 AI_Key = function() {
@@ -54,8 +55,22 @@ newWindow.document.close();  // Important to finish writing and render the conte
 
 };
 
+
+
 output = function() {
 
+Module.onRuntimeInitialized = function(a) {
+            console.log("JavaScript: Embind Runtime Initialized!");
+
+            // Create an instance of MyClass from JavaScript
+            let myInstance = new Module.MyClass(42);
+
+            console.log(text, myInstance.output(a)); // Output: 42
+
+            
+            myInstance.delete();
+            console.log("Instance deleted.");
+     };
 
 
-}
+};
