@@ -94,4 +94,6 @@ current = function() {
   console.log(obj);
 };
 
-modules.export
+modules.exports = {
+
+}
