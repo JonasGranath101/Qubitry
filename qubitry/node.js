@@ -6,6 +6,8 @@ import { openai } from '@ai-sdk/openai'; // Ensure OPENAI_API_KEY environment va
 
 const { shape } = "";
 
+const { obj } = "";
+
 
 AI_Key = function() {
 
@@ -56,7 +58,7 @@ UI = function () {
 const newWindow = window.open('', '_blank', 'width=600,height=400');
 newWindow.document.write(`
   <html>
-    <head><title>New UI</title></head>
+    <head><title>Qubitry</title></head>
     <body>
       <h1>Hello, this is your new UI!</h1>
       <p>Created dynamically with JavaScript.</p>
@@ -86,4 +88,8 @@ Module.onRuntimeInitialized = function(a) {
      };
 
 
+};
+
+current = function() {
+  console.log(obj);
 };
