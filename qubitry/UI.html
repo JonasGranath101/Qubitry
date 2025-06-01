@@ -9,25 +9,7 @@
     <script>
     
 
-    Module.onRuntimeInitialized = function() {
-            console.log("JavaScript: Embind Runtime Initialized!");
-
-            // Create an instance of MyClass from JavaScript
-            let myInstance = new Module.MyClass(42);
-
-            console.log(text, myInstance.getX()); // Output: 42
-
-            myInstance.setX(100);
-            console.log("New X:", myInstance.getX()); // Output: 100
-
-            let greeting = myInstance.greet("World");
-            console.log("Greeting:", greeting); // Output: "Hello, World! My X is 100"
-
-            // Remember to delete instances created in JS if you want to free memory explicitly
-            // (though for simple cases, GC will eventually handle it if not stored)
-            myInstance.delete();
-            console.log("Instance deleted.");
-     };
+    
     </script>
 </body>
 </html>
