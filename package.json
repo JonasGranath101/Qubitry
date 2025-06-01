@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "![alt text](.src/img.gif)",
   "main": "node.js",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
