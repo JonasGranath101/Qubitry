@@ -85,7 +85,7 @@ Module.onRuntimeInitialized = function(a) {
             
             myInstance.delete();
             console.log("Instance deleted.");
-     };
+};
 
 
 };
