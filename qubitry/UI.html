@@ -9,7 +9,7 @@
     <script>
     
 
-Module.onRuntimeInitialized = function() {
+    Module.onRuntimeInitialized = function() {
             console.log("JavaScript: Embind Runtime Initialized!");
 
             // Create an instance of MyClass from JavaScript
@@ -27,7 +27,7 @@ Module.onRuntimeInitialized = function() {
             // (though for simple cases, GC will eventually handle it if not stored)
             myInstance.delete();
             console.log("Instance deleted.");
-        };
+     };
     </script>
 </body>
 </html>
