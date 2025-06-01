@@ -2,7 +2,7 @@
   "name": "qubitry",
   "version": "1.0.0",
   "description": "![alt text](.src/img.gif)",
-  "main": "index.js",
+  "main": "node.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
