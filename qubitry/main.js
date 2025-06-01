@@ -9,3 +9,7 @@ const { text } = await generateText({
 }); 
 
 }
+
+UI = function () {
+
+}
