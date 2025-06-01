@@ -2,7 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include <emsccripten.h>
+#ifdef __EMSCRIPTEN__
+#include <emscripten.h>
+#else
+#define EMSCRIPTEN_KEEPALIVE
+#endif
 
 #include <iostream>
 #include <Eigen/Dense> // For Matrix, Vector, and solvers
@@ -14,6 +18,7 @@ char Search;
 
 }
 
+EMSCRIPTEN_KEEPALIVE
 
 int solve( char problem ) {
 
