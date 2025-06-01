@@ -43,6 +43,39 @@ A_ls << 1, 1,
 
 }
 
+// Example vertex structure
+typedef struct {
+    float x, y, z;
+} Vertex;
+
+void write_obj_vertices(const char* filename, Vertex* vertices, int count) {
+    FILE* file = fopen(filename, "w");
+    if (!file) {
+        perror("Failed to open file");
+        return;
+    }
+
+    for (int i = 0; i < count; ++i) {
+        fprintf(file, "v %f %f %f\n", vertices[i].x, vertices[i].y, vertices[i].z);
+    }
+
+    fclose(file);
+}
+
+// Example usage
+int main() {
+    Vertex vertices[] = {
+        {1.0, 2.0, 3.0},
+        {4.0, 5.0, 6.0},
+        {7.0, 8.0, 9.0}
+    };
+    int vertex_count = sizeof(vertices) / sizeof(vertices[0]);
+
+    write_obj_vertices("output.obj", vertices, vertex_count);
+
+    printf("OBJ file written.\n");
+    return 0;
+}
 
 
 
@@ -55,8 +88,11 @@ int graph( char data ) {
 // Write graph 3D object with vertex coordinates.
 
 
+main()
 
 
+
+// AI alternative.
 
 // Define the matrix A and vector b for Ax = b
     Eigen::Matrix3d A;
