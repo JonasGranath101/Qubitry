@@ -1,20 +1,41 @@
 import { generateText } from 'ai';
+
+let { AI_key } = "";
+
 import { openai } from '@ai-sdk/openai'; // Ensure OPENAI_API_KEY environment variable is set
+
+
+
+AI_Key = function() {
+
+AI_Key = prompt("AI API key ")
+  
+};
+
 
 
 Identify = function() {
 
+
+
+const { shape } = prompt('Shape to define ');
+
 const { text } = await generateText({
   model: openai('gpt-4o'),
   system: 'You are a friendly assistant!',
-  prompt: 'Define the shape ' + shape + '',
+  prompt: 'Define the shape ' + shape + '?',
 }); 
 
-}
+const { shape_data } = text.split()
 
-AI_Key = function() {
 
-}
+const { definition } = shape_data.map()
+
+
+};
+
+
+
 
 Initiation = function () {
 
@@ -31,4 +52,4 @@ newWindow.document.write(`
 newWindow.document.close();  // Important to finish writing and render the content
 
 
-}
+};
