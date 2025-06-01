@@ -15,6 +15,8 @@ struct algorithmic () {
 
 char Search;
 
+char OBJ;
+
 
 }
 
@@ -22,7 +24,7 @@ EMSCRIPTEN_KEEPALIVE
 
 int solve( char problem ) {
 
-// LLMs to object identification
+// Machine Learning to obj translation.
 
 if ((char problem)==Search) {
 
@@ -154,6 +156,8 @@ main()
 
 
 int output() {
+
+  return OBJ;
 
 }
                                              
