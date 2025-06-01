@@ -144,23 +144,6 @@ main()
 }
 
 
-
-// Algorithmic index dynamic functionality.
-
-
-
-int geometry( char str ) {
-
-
-char Search = str;
-
-
-solve();
-                                             
-}
-
-
-
 // Output object as ".obj" file data.
 
 
