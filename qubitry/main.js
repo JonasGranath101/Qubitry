@@ -14,4 +14,17 @@ const { text } = await generateText({
 
 UI = function () {
 
+const newWindow = window.open('', '_blank', 'width=600,height=400');
+newWindow.document.write(`
+  <html>
+    <head><title>New UI</title></head>
+    <body>
+      <h1>Hello, this is your new UI!</h1>
+      <p>Created dynamically with JavaScript.</p>
+    </body>
+  </html>
+`);
+newWindow.document.close();  // Important to finish writing and render the content
+
+
 }
