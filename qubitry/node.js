@@ -24,13 +24,26 @@ const { shape } = prompt('Shape to define ');
 const { text } = await generateText({
   model: openai('gpt-4o'),
   system: 'You are a friendly assistant!',
-  prompt: 'Define the shape ' + shape + '?',
+  prompt: ('Write shape data for ' + shape + '?'),
 }); 
 
 const { shape_data } = text.split()
 
 
 const { definition } = shape_data.map()
+
+Module.onRuntimeInitialized = function(a) {
+            console.log("JavaScript: Embind Runtime Initialized!");
+
+            // Create an instance of MyClass from JavaScript
+            let myInstance = new Module.MyClass(42);
+
+            console.log(text, myInstance.output(a)); // Output: 42
+
+            
+            myInstance.delete();
+            console.log("Instance deleted.");
+};
 
 
 };
