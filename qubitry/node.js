@@ -93,3 +93,5 @@ Module.onRuntimeInitialized = function(a) {
 current = function() {
   console.log(obj);
 };
+
+modules.export
