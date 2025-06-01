@@ -95,5 +95,9 @@ current = function() {
 };
 
 modules.exports = {
-
-}
+   current,
+   output,
+   UI,
+   Identify,
+   AI_Key
+};
