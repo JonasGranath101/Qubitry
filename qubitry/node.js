@@ -12,7 +12,7 @@ filter = function ( vertex ) {
 
    for( i=0;i<=vertex.length();i+ ) {
 
-   const  vertices = vertex.append( vertex.find("[") );
+   const  vertices = vertex.push( vertex.find("[") );
 
    };
 
@@ -66,7 +66,7 @@ const { text } = await generateText({
 
 const { shape_data } = text.split();
 
-const { definition } = shape_data.map(filter);
+const { definition } = filter( shape_data );
 
 const obj = definition;
 
