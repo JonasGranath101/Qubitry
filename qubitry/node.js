@@ -70,6 +70,10 @@ Identify = function() {
 
   const obj = definition;
 
+  // Obj vertices algorithm identification. 
+
+  // Math.
+
   Module.onRuntimeInitialized = function() {
               console.log("JavaScript: Embind Runtime Initialized!");
 
