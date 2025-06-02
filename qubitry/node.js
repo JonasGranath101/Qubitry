@@ -55,6 +55,8 @@ Module.onRuntimeInitialized = function(a) {
 
 UI = function () {
 
+// Graph UI, data and nodes.
+
 const newWindow = window.open('', '_blank', 'width=600,height=400');
 newWindow.document.write(`
   <html>
