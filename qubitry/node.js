@@ -31,10 +31,12 @@ const { text } = await generateText({
   prompt: ('Write shape data for ' + shape + '?'),
 }); 
 
-const { shape_data } = text.split()
+const { shape_data } = text.split();
 
 
-const { definition } = shape_data.map()
+const { definition } = shape_data.map();
+
+const obj = definition;
 
 Module.onRuntimeInitialized = function(a) {
             console.log("JavaScript: Embind Runtime Initialized!");
@@ -42,7 +44,7 @@ Module.onRuntimeInitialized = function(a) {
             // Create an instance of MyClass from JavaScript
             let myInstance = new Module.MyClass(42);
 
-            console.log(text, myInstance.graph(a)); // Output: 42
+            console.log(text, myInstance.graph(obj)); // Output: 42
 
             
             myInstance.delete();
