@@ -62,7 +62,7 @@ UI = function () {
 const newWindow = window.open('', '_blank', 'width=600,height=400');
 newWindow.document.write(`
   <html>
-    <head><title>Qubitry</title></head>
+    <head><title>3D graph</title></head>
     <body>
       <h1>Hello, this is your new UI!</h1>
       <p>Created dynamically with JavaScript.</p>
@@ -70,6 +70,31 @@ newWindow.document.write(`
   </html>
 `);
 newWindow.document.close();  // Important to finish writing and render the content
+
+const newWindow = window.open('', '_blank', 'width=600,height=400');
+newWindow.document.write(`
+  <html>
+    <head><title>Data</title></head>
+    <body>
+      <h1>Hello, this is your new UI!</h1>
+      <p>Created dynamically with JavaScript.</p>
+    </body>
+  </html>
+`);
+newWindow.document.close();  // Important to finish writing and render the content
+
+const newWindow = window.open('', '_blank', 'width=600,height=400');
+newWindow.document.write(`
+  <html>
+    <head><title>Nodes</title></head>
+    <body>
+      <h1>Hello, this is your new UI!</h1>
+      <p>Created dynamically with JavaScript.</p>
+    </body>
+  </html>
+`);
+newWindow.document.close();  // Important to finish writing and render the content
+
 
 
 };
@@ -80,13 +105,13 @@ output = function() {
 
 // Output .obj file data.
 
-Module.onRuntimeInitialized = function(a) {
+Module.onRuntimeInitialized = function() {
             console.log("JavaScript: Embind Runtime Initialized!");
 
             // Create an instance of MyClass from JavaScript
             let myInstance = new Module.MyClass(42);
 
-            console.log(text, myInstance.output(a)); // Output: 42
+            console.log(text, myInstance.output(obj)); // Output: 42
 
             
             myInstance.delete();
@@ -101,6 +126,7 @@ current = function() {
   // Current variables set.
 
   console.log(obj);
+
 };
 
 modules.exports = {
