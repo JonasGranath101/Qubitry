@@ -61,7 +61,7 @@ Identify = function() {
   const { text } = await generateText({
     model: openai('gpt-4o'),
     system: 'You are a friendly assistant!',
-    prompt: ('Write shape data for ' + shape + '?'),
+    prompt: ('Write shape data vertices for ' + shape + '?'),
   }); 
 
   const { shape_data } = text.split();
