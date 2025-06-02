@@ -12,7 +12,7 @@ filter = function ( vertex ) {
 
    for( i=0;i<=vertex.length();i+ ) {
 
-   const  vertices = vertex.push( vertex.find("[") );
+        const  vertices = vertex.push( vertex.find("[") );
 
    };
 
@@ -22,9 +22,9 @@ filter = function ( vertex ) {
 
 AI_Key = function() {
 
-// Openai api key.
+  // Openai api key.
 
-AI_Key = prompt("AI API key :")
+  AI_Key = prompt("AI API key :")
   
 };
 
@@ -45,43 +45,43 @@ vertices = function (c) {
             
             myInstance.delete();
             console.log("Instance deleted.");
-};
+  };
 }
 
 
 
 Identify = function() {
 
-// Shape identification.
+  // Shape identification.
 
-// Search handler.
+  // Search handler.
 
-const { shape } = prompt('Shape to define :');
+  const { shape } = prompt('Shape to define :');
 
-const { text } = await generateText({
-  model: openai('gpt-4o'),
-  system: 'You are a friendly assistant!',
-  prompt: ('Write shape data for ' + shape + '?'),
-}); 
+  const { text } = await generateText({
+    model: openai('gpt-4o'),
+    system: 'You are a friendly assistant!',
+    prompt: ('Write shape data for ' + shape + '?'),
+  }); 
 
-const { shape_data } = text.split();
+  const { shape_data } = text.split();
 
-const { definition } = filter( shape_data );
+  const { definition } = filter( shape_data );
 
-const obj = definition;
+  const obj = definition;
 
-Module.onRuntimeInitialized = function() {
-            console.log("JavaScript: Embind Runtime Initialized!");
+  Module.onRuntimeInitialized = function() {
+              console.log("JavaScript: Embind Runtime Initialized!");
 
-            // Create an instance of MyClass from JavaScript
-            let myInstance = new Module.MyClass(42);
+              // Create an instance of MyClass from JavaScript
+              let myInstance = new Module.MyClass(42);
 
-            console.log(text, myInstance.graph(obj)); // Output: 42
+              console.log(text, myInstance.graph(obj)); // Output: 42
 
-            
-            myInstance.delete();
-            console.log("Instance deleted.");
-};
+              
+              myInstance.delete();
+              console.log("Instance deleted.");
+  };
 
 
 };
@@ -91,43 +91,43 @@ Module.onRuntimeInitialized = function() {
 
 UI = function () {
 
-// Graph UI, data and nodes.
+  // Graph UI, data and nodes.
 
-const newWindow = window.open('', '_blank', 'width=600,height=400');
-newWindow.document.write(`
-  <html>
-    <head><title>3D graph</title></head>
-    <body>
-      <h1>Hello, this is your new UI!</h1>
-      <p>Created dynamically with JavaScript.</p>
-    </body>
-  </html>
-`);
-newWindow.document.close();  // Important to finish writing and render the content
+  const newWindow = window.open('', '_blank', 'width=600,height=400');
+  newWindow.document.write(`
+    <html>
+      <head><title>3D graph</title></head>
+      <body>
+        <h1>Hello, this is your new UI!</h1>
+        <p>Created dynamically with JavaScript.</p>
+      </body>
+    </html>
+  `);
+  newWindow.document.close();  // Important to finish writing and render the content
 
-const newWindow = window.open('', '_blank', 'width=600,height=400');
-newWindow.document.write(`
-  <html>
-    <head><title>Data</title></head>
-    <body>
-      <h1>Hello, this is your new UI!</h1>
-      <p>Created dynamically with JavaScript.</p>
-    </body>
-  </html>
-`);
-newWindow.document.close();  // Important to finish writing and render the content
+  const newWindow = window.open('', '_blank', 'width=600,height=400');
+  newWindow.document.write(`
+    <html>
+      <head><title>Data</title></head>
+      <body>
+        <h1>Hello, this is your new UI!</h1>
+        <p>Created dynamically with JavaScript.</p>
+      </body>
+    </html>
+  `);
+  newWindow.document.close();  // Important to finish writing and render the content
 
-const newWindow = window.open('', '_blank', 'width=600,height=400');
-newWindow.document.write(`
-  <html>
-    <head><title>Nodes</title></head>
-    <body>
-      <h1>Hello, this is your new UI!</h1>
-      <p>Created dynamically with JavaScript.</p>
-    </body>
-  </html>
-`);
-newWindow.document.close();  // Important to finish writing and render the content
+  const newWindow = window.open('', '_blank', 'width=600,height=400');
+  newWindow.document.write(`
+    <html>
+      <head><title>Nodes</title></head>
+      <body>
+        <h1>Hello, this is your new UI!</h1>
+        <p>Created dynamically with JavaScript.</p>
+      </body>
+    </html>
+  `);
+  newWindow.document.close();  // Important to finish writing and render the content
 
 
 
@@ -157,9 +157,9 @@ Module.onRuntimeInitialized = function() {
 
 current = function() {
 
-  // Current variables set.
+      // Current variables set.
 
-  console.log(obj);
+      console.log(obj);
 
 };
 

@@ -17,7 +17,7 @@ EMSCRIPTEN_KEEPALIVE
 
 algorithmic struct {
 
-char OBJ;
+    char OBJ;
 
 
 }
@@ -104,17 +104,17 @@ int graph( char data ) {
 
 if (data ) {
 
-// Write graph 3D object with vertex coordinates.
+    // Write graph 3D object with vertex coordinates.
 
 
-return main(data);
+    return main(data);
 
 
 } else {
 
-// AI alternative. Harder geometries.
+    // AI alternative. Harder geometries.
 
-return solve(data);
+    return solve(data);
 }
 }
 
@@ -125,7 +125,7 @@ return solve(data);
 
 int output() {
 
-  return OBJ;
+    return OBJ;
 
 }
                                              
