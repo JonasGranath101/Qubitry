@@ -164,6 +164,7 @@ current = function() {
 };
 
 modules.exports = {
+   vertices,
    current,
    output,
    UI,
