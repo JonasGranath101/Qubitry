@@ -20,6 +20,9 @@ filter = function ( vertex ) {
 
 };
 
+
+
+
 AI_Key = function() {
 
   // Openai api key.
@@ -61,7 +64,7 @@ Identify = function() {
   const { text } = await generateText({
     model: openai('gpt-4o'),
     system: 'You are a friendly assistant!',
-    prompt: ('Give me a list of all vertices for ' + shape + '?'),
+    prompt: ('Give me a list of first .obj vertices file for ' + shape + '?'),
   }); 
 
   const { shape_data } = text.split();
@@ -71,6 +74,8 @@ Identify = function() {
   const obj = definition;
 
   // Obj vertices algorithm identification. 
+
+  // Some what mathematical correct.
 
   // Math.
 
