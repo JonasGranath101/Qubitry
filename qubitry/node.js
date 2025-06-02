@@ -8,6 +8,17 @@ const { shape } = "";
 
 const { obj } = "";
 
+filter = function ( vertex ) {
+
+   for( i=1, vertex.length() ) {
+
+   const  vertices = vertex.append( vertex.find("[") );
+
+   };
+
+   return vertices;
+
+};
 
 AI_Key = function() {
 
@@ -17,8 +28,12 @@ AI_Key = prompt("AI API key :")
   
 };
 
+
+
 vertices = function (c) {
+
    const obj = c;
+
    Module.onRuntimeInitialized = function() {
             console.log("JavaScript: Embind Runtime Initialized!");
 
@@ -34,9 +49,12 @@ vertices = function (c) {
 }
 
 
+
 Identify = function() {
 
 // Shape identification.
+
+// Search handler.
 
 const { shape } = prompt('Shape to define :');
 
@@ -48,9 +66,7 @@ const { text } = await generateText({
 
 const { shape_data } = text.split();
 
-
-
-const { definition } = shape_data.map();
+const { definition } = shape_data.map(filter);
 
 const obj = definition;
 
