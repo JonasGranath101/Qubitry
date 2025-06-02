@@ -11,6 +11,8 @@ const { obj } = "";
 
 AI_Key = function() {
 
+// Openai api key.
+
 AI_Key = prompt("AI API key :")
   
 };
@@ -19,7 +21,7 @@ AI_Key = prompt("AI API key :")
 
 Identify = function() {
 
-
+// Shape identification.
 
 const { shape } = prompt('Shape to define :');
 
@@ -76,6 +78,8 @@ newWindow.document.close();  // Important to finish writing and render the conte
 
 output = function() {
 
+// Output .obj file data.
+
 Module.onRuntimeInitialized = function(a) {
             console.log("JavaScript: Embind Runtime Initialized!");
 
@@ -93,6 +97,9 @@ Module.onRuntimeInitialized = function(a) {
 };
 
 current = function() {
+
+  // Current variables set.
+
   console.log(obj);
 };
 
