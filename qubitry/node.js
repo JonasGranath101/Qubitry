@@ -17,6 +17,21 @@ AI_Key = prompt("AI API key :")
   
 };
 
+vertices = function (c) {
+   const obj = c;
+   Module.onRuntimeInitialized = function() {
+            console.log("JavaScript: Embind Runtime Initialized!");
+
+            // Create an instance of MyClass from JavaScript
+            let myInstance = new Module.MyClass(42);
+
+            console.log(text, myInstance.graph(obj)); // Output: 42
+
+            
+            myInstance.delete();
+            console.log("Instance deleted.");
+};
+}
 
 
 Identify = function() {
@@ -34,11 +49,12 @@ const { text } = await generateText({
 const { shape_data } = text.split();
 
 
+
 const { definition } = shape_data.map();
 
 const obj = definition;
 
-Module.onRuntimeInitialized = function(a) {
+Module.onRuntimeInitialized = function() {
             console.log("JavaScript: Embind Runtime Initialized!");
 
             // Create an instance of MyClass from JavaScript
