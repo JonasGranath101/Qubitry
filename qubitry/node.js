@@ -10,7 +10,7 @@ const { obj } = "";
 
 filter = function ( vertex ) {
 
-   for( i=1, vertex.length() ) {
+   for( i=0;i<=vertex.length();i+ ) {
 
    const  vertices = vertex.append( vertex.find("[") );
 
