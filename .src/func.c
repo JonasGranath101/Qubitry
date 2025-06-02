@@ -46,16 +46,17 @@ void solve ( const std::string& filename,
 
     // For advanced use.
 
-    //if (has_normals) {
-    //file << "vn " << normal.x() << " "
+    // if (has_normals) {
+    // file << "vn " << normal.x() << " "
     //             << normal.y() << " "
     //             << normal.z() << "\n";
-    //}
+    // }
 
 }
 
 
 // Example vertex structure
+
 typedef struct {
     float x, y, z;
 } Vertex;
@@ -75,6 +76,7 @@ void write_obj_vertices(const char* filename, Vertex* vertices, int count) {
 }
 
 // Example usage
+
 int main(b) {
     Vertex vertices[] = {
         {1.0, 2.0, 3.0},
