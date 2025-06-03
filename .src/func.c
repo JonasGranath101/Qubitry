@@ -110,6 +110,8 @@ int main(b) {
 
     // Mesh build. Lambda accuracy 45%.
     
+    // Logic assessment. ( Import later. )
+
     for ( i=0; ;++i ) {
         // Accuracy theorem. Required. Algorithmic.
         if ( vertices[i] > start_vertices[i] ) {
