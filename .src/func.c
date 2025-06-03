@@ -106,6 +106,12 @@ if (data ) {
 
     // Write graph 3D object with vertex coordinates.
 
+    // Ultimately vertical.
+
+    // Build.
+
+
+
 
     return main(data);
 
@@ -113,6 +119,13 @@ if (data ) {
 } else {
 
     // AI alternative. Harder geometries.
+
+    // Ultimately vertical.
+
+    // Build.
+
+    
+
 
     return solve(data);
 }
