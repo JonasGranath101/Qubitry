@@ -35,6 +35,8 @@ void solve ( const std::string& filename,
     };
 
     // Mesh build. Lambda accuracy 45%.
+
+    // Logic assessment. ( Import later. )
     
     for ( i=0; ;++i ) {
         // Accuracy theorem. Required. Algorithmic.
