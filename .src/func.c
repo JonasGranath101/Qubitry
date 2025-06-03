@@ -8,6 +8,14 @@
 #define EMSCRIPTEN_KEEPALIVE
 #endif
 
+// Include mockturtle headers. Logic.
+#include <mockturtle/mockturtle.hpp>
+#include <mockturtle/algorithms/cut_enumeration.hpp>
+#include <mockturtle/networks/aig.hpp>
+
+// Include lorina for AIGER parsing
+#include <lorina/aiger.hpp>
+
 #include <iostream>
 #include <Eigen/Dense> // For Matrix, Vector, and solvers
 
