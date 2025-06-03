@@ -25,6 +25,14 @@ algorithmic struct {
 void solve ( const std::string& filename,
               const Eigen::MatrixXd& vertices,
               const std::vector<Eigen::Vector3i>& faces ) {
+
+    // Node in vertex.
+
+    Vertex vertices[] = {
+        {1.0, 2.0, 3.0},
+        {4.0, 5.0, 6.0},
+        {7.0, 8.0, 9.0}
+    };
     
     // Machine Learning to obj translation.
 
@@ -78,11 +86,15 @@ void write_obj_vertices(const char* filename, Vertex* vertices, int count) {
 // Example usage
 
 int main(b) {
+
+    // Node in vertex.
+
     Vertex vertices[] = {
         {1.0, 2.0, 3.0},
         {4.0, 5.0, 6.0},
         {7.0, 8.0, 9.0}
     };
+
     int vertex_count = sizeof(vertices) / sizeof(vertices[0]);
 
     write_obj_vertices("output.obj", vertices, vertex_count);
