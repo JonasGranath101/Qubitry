@@ -28,7 +28,7 @@ struct algorithmic {
     char OBJ;
 
 
-};
+}
 
 int logic() {
     // Use an AIG network. We'll wrap it in a names_view to easily assign/retrieve names.
