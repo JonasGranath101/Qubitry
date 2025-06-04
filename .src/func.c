@@ -182,15 +182,24 @@ void solve ( const std::string& filename,
         {7.0, 8.0, 9.0}
     };
 
-    // Mesh build. Lambda accuracy 45%.
+    // Mesh build. Lambda accuracy "some%".
 
-    // Logic assessment. ( Import later. )
-    
+    // Logic assessment. 
+
     for ( i=0; ;++i ) {
+
         // Accuracy theorem. Required. Algorithmic.
+
+        const logical = logic() // Logic gates for vertices confirmation. Applicable in for loop. 
+
+        // Applied machine learning.
+
         if ( vertices[i] > start_vertices[i] ) {
+
            Vertex nodes [] = nodes + vertices[i];
+
         };
+
     };
 
     // Machine Learning to obj translation.
@@ -256,15 +265,22 @@ int main( b, c ) {
         {7.0, 8.0, 9.0}
     };
 
-    // Mesh build. Lambda accuracy 45%.
+    // Mesh build. Lambda accuracy "some%".
     
-    // Logic assessment. ( Import later. )
+    // Logic assessment.
 
     for ( i=0; ;++i ) {
+
         // Accuracy theorem. Required. Algorithmic.
+
+        const logical = logic() // Logic gates for vertices confirmation. Applicable in for loop. 
+
         if ( vertices[i] > start_vertices[i] ) {
+
            Vertex nodes [] = nodes + vertices[i];
+
         };
+
     };
 
     int vertex_count = sizeof(vertices) / sizeof(vertices[0]);
@@ -290,7 +306,7 @@ if (data ) {
 
     // Write graph 3D object with vertex coordinates.
 
-    // Ultimately vertical.
+    // Ultimately vertices.
 
     // Build.
 
@@ -304,7 +320,7 @@ if (data ) {
 
     // AI alternative. Harder geometries.
 
-    // Ultimately vertical.
+    // Ultimately vertices.
 
     // Build.
 
