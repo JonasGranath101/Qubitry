@@ -23,7 +23,7 @@
 
 EMSCRIPTEN_KEEPALIVE
 
-algorithmic struct {
+struct algorithmic {
 
     char OBJ;
 
