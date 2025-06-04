@@ -10,3 +10,5 @@
 • Graphing output.
 
 • AI shape recognition.
+
+• Logical interference.
