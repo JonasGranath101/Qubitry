@@ -2,7 +2,24 @@ import { generateText } from 'ai';
 
 let { AI_key } = "";
 
-import { openai } from '@ai-sdk/openai'; // Ensure OPENAI_API_KEY environment variable is set
+// Please install OpenAI SDK first: `npm install openai`
+
+import OpenAI from "openai";
+
+const openai = new OpenAI({
+        baseURL: 'https://api.deepseek.com',
+        apiKey: AI_key
+});
+
+async function main() {
+  const completion = await openai.chat.completions.create({
+    messages: [{ role: "system", content: "Outer vector data in " + shape + " shape." }],
+    model: "deepseek-chat",
+  });
+
+}
+
+main();
 
 const { shape } = "";
 
@@ -27,7 +44,7 @@ AI_Key = function() {
 
       // Openai api key.
 
-      AI_Key = prompt("AI API key :")
+      AI_Key = prompt("AI API key for deepseek :")
       
 };
 
@@ -61,11 +78,7 @@ Identify = function() {
 
       const { shape } = prompt('Shape to define :');
 
-      const { text } = await generateText({
-        model: openai('gpt-4o'),
-        system: 'You are a friendly assistant!',
-        prompt: ('Give me a list of first .obj vertices file for ' + shape + '?'),
-      }); 
+      const { text } = completion.choices[0].message.content
 
       const { shape_data } = text.split();
 
