@@ -182,7 +182,11 @@ void solve ( const std::string& filename,
         {7.0, 8.0, 9.0}
     };
 
+    // Iterate vector end points build mesh then validate.
+
     // Mesh build. Lambda accuracy "some%".
+
+
 
     // Logic assessment. 
 
@@ -201,6 +205,8 @@ void solve ( const std::string& filename,
         };
 
     };
+
+    
 
     // Machine Learning to obj translation.
 
@@ -265,7 +271,11 @@ int main( b, c ) {
         {7.0, 8.0, 9.0}
     };
 
+    // Iterate vector end points build mesh then validate.
+
     // Mesh build. Lambda accuracy "some%".
+
+
     
     // Logic assessment.
 
