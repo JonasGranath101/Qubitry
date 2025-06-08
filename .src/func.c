@@ -176,48 +176,11 @@ void solve ( const std::string& filename,
 
     // Node in vertex.
 
-    Vertex vertices[] = {
-        {1.0, 2.0, 3.0},
-        {4.0, 5.0, 6.0},
-        {7.0, 8.0, 9.0}
-    };
+    Vertex vertices[] = start_vertices;
 
     // Iterate vector end points build mesh then validate.
 
     // Mesh build. Lambda accuracy "some%".
-
-    for ( i=0;   ;++i ) {
-
-       // Appending vertex line. 
-
-
-						Vertex 	vertices[] = vertices + 
-
-    }
-
-    // Logic assessment. 
-
-    for ( i=0; ;++i ) {
-
-        // Accuracy theorem. Required. Algorithmic.
-
-        const logical = logic() // Logic gates for vertices confirmation. Applicable in for loop. 
-
-        // Applied machine learning.
-
-        if ( vertices[i] > start_vertices[i] ) {
-
-           Vertex nodes [] = nodes + vertices[i];
-
-        };
-
-    };
-
-    
-
-    // Machine Learning to obj translation.
-
-    // Filler.
 
     std::ofstream file(filename);
     
@@ -242,6 +205,27 @@ void solve ( const std::string& filename,
     //             << normal.y() << " "
     //             << normal.z() << "\n";
     // }
+
+    
+   
+
+    // Logic assessment. Correct.
+
+    for ( i=0; ;++i ) {
+
+        // Accuracy theorem. Required. Algorithmic.
+
+        const logical = logic() // Logic gates for vertices confirmation. Applicable in for loop. 
+
+        // Applied machine learning.
+
+        if ( vertices[i] > start_vertices[i] ) {
+
+           Vertex nodes [] = nodes + vertices[i];
+
+        };
+
+    };
 
 }
 
@@ -268,21 +252,22 @@ void write_obj_vertices(const char* filename, Vertex* vertices, int count) {
 
 // Example usage
 
-int main( b, c ) {
+int simple_solve( b, c ) {
 
     // Node in vertex.
 
-    Vertex vertices[] = {
-        {1.0, 2.0, 3.0},
-        {4.0, 5.0, 6.0},
-        {7.0, 8.0, 9.0}
-    };
+    
 
     // Iterate vector end points build mesh then validate.
 
     // Mesh build. Lambda accuracy "some%".
 
-
+    for (size_t i = 0; i < sizeof(faces)/sizeof(faces[0]); i++) {
+        fprintf(obj_file, "f %d %d %d\n",
+                faces[i][0],
+                faces[i][1],
+                faces[i][2]);
+    }
     
     // Logic assessment.
 
@@ -330,7 +315,7 @@ if (data ) {
 
 
 
-    return main( data, data2 );
+    return simple_solve( data, data2 );
 
 
 } else {
