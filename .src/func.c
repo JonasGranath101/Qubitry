@@ -23,7 +23,7 @@
 
 EMSCRIPTEN_KEEPALIVE
 
-typedef struct {
+typedef struct{
     float x,y,z;
 } OBJ;
 
