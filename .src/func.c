@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <string>
+#include <math.h>
 
 #ifdef __EMSCRIPTEN__
 #include <emscripten.h>
@@ -12,103 +9,143 @@
 #define EMSCRIPTEN_KEEPALIVE
 #endif
 
-// Include mockturtle headers. Logic.
-#include <mockturtle/mockturtle.hpp>
-#include <mockturtle/algorithms/cut_enumeration.hpp>
-#include <mockturtle/networks/aig.hpp>
-
-// Include lorina for AIGER parsing
-#include <lorina/aiger.hpp>
-
-#include <Eigen/Dense> // For Matrix, Vector, and solvers
-
-// Example vertex structure
+// Vertex structure with normal
 typedef struct {
     float x, y, z;
+    float nx, ny, nz; // Normal vector
 } Vertex;
 
+// Face structure (triangle)
+typedef struct {
+    int v1, v2, v3; // Indices (1-based for OBJ)
+} Face;
+
+// Mesh structure
+typedef struct {
+    Vertex* vertices;
+    int vertex_count;
+    Face* faces;
+    int face_count;
+} Mesh;
+
 EMSCRIPTEN_KEEPALIVE
-int logic() {
-    mockturtle::names_view<mockturtle::aig_network> named_aig;
 
-    auto const a = named_aig.create_pi("a");
-    auto const b = named_aig.create_pi("b");
-    auto const c = named_aig.create_pi("c");
-
-    auto const g1 = named_aig.create_and(a, b);
-    named_aig.set_name(g1, "g1_AND_ab");
-
-    auto const not_g1 = named_aig.create_not(g1);
-    auto const not_c = named_aig.create_not(c);
-
-    auto const temp_and = named_aig.create_and(not_g1, not_c);
-    auto const y = named_aig.create_not(temp_and);
-    named_aig.set_name(y, "y_OR_g1_c");
-
-    named_aig.create_po(y, "final_output_y");
-
-    return 0;
+// Calculate normal for a face (helper)
+void calculate_normal(const Vertex* v1, const Vertex* v2, const Vertex* v3, float* nx, float* ny, float* nz) {
+    float ux = v2->x - v1->x;
+    float uy = v2->y - v1->y;
+    float uz = v2->z - v1->z;
+    float vx = v3->x - v1->x;
+    float vy = v3->y - v1->y;
+    float vz = v3->z - v1->z;
+    *nx = uy * vz - uz * vy;
+    *ny = uz * vx - ux * vz;
+    *nz = ux * vy - uy * vx;
+    float length = sqrtf((*nx)*(*nx) + (*ny)*(*ny) + (*nz)*(*nz));
+    if (length > 0.0001f) {
+        *nx /= length;
+        *ny /= length;
+        *nz /= length;
+    }
 }
 
-void write_obj_vertices(const char* filename, Vertex* vertices, int count) {
+// Write OBJ file with vertices, normals, and faces
+void write_obj(const char* filename, const Mesh* mesh) {
     FILE* file = fopen(filename, "w");
     if (!file) {
-        perror("Failed to open file");
+        perror("Failed to open OBJ file");
         return;
     }
 
-    for (int i = 0; i < count; ++i) {
-        fprintf(file, "v %f %f %f\n", vertices[i].x, vertices[i].y, vertices[i].z);
+    // Write vertices
+    for (int i = 0; i < mesh->vertex_count; ++i) {
+        fprintf(file, "v %.6f %.6f %.6f\n", mesh->vertices[i].x, mesh->vertices[i].y, mesh->vertices[i].z);
     }
 
+    // Write normals
+    for (int i = 0; i < mesh->vertex_count; ++i) {
+        fprintf(file, "vn %.6f %.6f %.6f\n", mesh->vertices[i].nx, mesh->vertices[i].ny, mesh->vertices[i].nz);
+    }
+
+    // Write faces (with normals)
+    for (int i = 0; i < mesh->face_count; ++i) {
+        fprintf(file, "f %d//%d %d//%d %d//%d\n",
+                mesh->faces[i].v1 + 1, mesh->faces[i].v1 + 1,
+                mesh->faces[i].v2 + 1, mesh->faces[i].v2 + 1,
+                mesh->faces[i].v3 + 1, mesh->faces[i].v3 + 1);
+    }
     fclose(file);
 }
 
-void solve(const std::string& filename,
-           const Eigen::MatrixXd& vertices,
-           const std::vector<Eigen::Vector3i>& faces,
-           const Eigen::MatrixXd& start_vertices) {
-    std::ofstream file(filename);
-
-    for (int col = 0; col < vertices.cols(); ++col) {
-        file << "v " << vertices(0, col) << " "
-             << vertices(1, col) << " "
-             << vertices(2, col) << "\n";
+// Print mesh information
+void print_mesh_info(const Mesh* mesh) {
+    printf("Mesh Information:\n");
+    printf("  Vertices: %d\n", mesh->vertex_count);
+    printf("  Faces:    %d\n", mesh->face_count);
+    for (int i = 0; i < mesh->vertex_count; ++i) {
+        printf("  Vertex %d: (%.2f, %.2f, %.2f) Normal (%.2f, %.2f, %.2f)\n",
+            i, mesh->vertices[i].x, mesh->vertices[i].y, mesh->vertices[i].z,
+            mesh->vertices[i].nx, mesh->vertices[i].ny, mesh->vertices[i].nz);
     }
+}
 
-    for (const auto& face : faces) {
-        file << "f " << face[0] + 1 << " "
-             << face[1] + 1 << " "
-             << face[2] + 1 << "\n";
+// Example: Create a simple triangle mesh
+Mesh create_simple_mesh() {
+    Mesh mesh;
+    mesh.vertex_count = 3;
+    mesh.face_count = 1;
+    mesh.vertices = (Vertex*)malloc(mesh.vertex_count * sizeof(Vertex));
+    mesh.faces = (Face*)malloc(mesh.face_count * sizeof(Face));
+
+    // Vertices
+    mesh.vertices[0] = (Vertex){0.0f, 0.0f, 0.0f, 0,0,0};
+    mesh.vertices[1] = (Vertex){1.0f, 0.0f, 0.0f, 0,0,0};
+    mesh.vertices[2] = (Vertex){0.0f, 1.0f, 0.0f, 0,0,0};
+
+    // Face
+    mesh.faces[0] = (Face){0, 1, 2};
+
+    // Calculate normals for each vertex (flat shading)
+    float nx, ny, nz;
+    calculate_normal(&mesh.vertices[0], &mesh.vertices[1], &mesh.vertices[2], &nx, &ny, &nz);
+    for (int i = 0; i < mesh.vertex_count; ++i) {
+        mesh.vertices[i].nx = nx;
+        mesh.vertices[i].ny = ny;
+        mesh.vertices[i].nz = nz;
     }
-
-    // Example logic usage
-    logic();
-
-    file.close();
+    return mesh;
 }
 
-int simple_solve(int b, int c) {
-    // Example vertices and faces
-    Vertex vertices[] = { {0.0f, 0.0f, 0.0f}, {1.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f} };
-    int vertex_count = sizeof(vertices) / sizeof(vertices[0]);
-
-    write_obj_vertices("output.obj", vertices, vertex_count);
-
-    printf("OBJ file written.\n");
-
-    return vertex_count;
+// Output mesh info as a string (for advanced data output)
+void mesh_info_string(const Mesh* mesh, char* buffer, size_t buf_size) {
+    int offset = 0;
+    offset += snprintf(buffer + offset, buf_size - offset, "Mesh: %d vertices, %d faces\n",
+                      mesh->vertex_count, mesh->face_count);
+    for (int i = 0; i < mesh->vertex_count; ++i) {
+        offset += snprintf(buffer + offset, buf_size - offset,
+            "Vertex %d: (%.2f, %.2f, %.2f) Normal (%.2f, %.2f, %.2f)\n",
+            i, mesh->vertices[i].x, mesh->vertices[i].y, mesh->vertices[i].z,
+            mesh->vertices[i].nx, mesh->vertices[i].ny, mesh->vertices[i].nz);
+    }
 }
 
-int graph() {
-    // Call simple_solve with example parameters
-    int result = simple_solve(1, 2);
-    std::cout << "simple_solve returned: " << result << std::endl;
-    return result;
-}
+int main() {
+    Mesh mesh = create_simple_mesh();
 
-int output () {
+    // Write OBJ file
+    write_obj("advanced_output.obj", &mesh);
 
-    return vertices
+    // Print mesh info to console
+    print_mesh_info(&mesh);
 
+    // Output mesh info as string
+    char info_buffer[1024];
+    mesh_info_string(&mesh, info_buffer, sizeof(info_buffer));
+    printf("\n--- Mesh Info String ---\n%s", info_buffer);
+
+    // Free memory
+    free(mesh.vertices);
+    free(mesh.faces);
+
+    return 0;
 }
