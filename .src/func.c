@@ -9,6 +9,8 @@
 #define EMSCRIPTEN_KEEPALIVE
 #endif
 
+EMSCRIPTEN_KEEPALIVE
+
 // Vertex structure with normal
 typedef struct {
     float x, y, z;
@@ -28,7 +30,7 @@ typedef struct {
     int face_count;
 } Mesh;
 
-EMSCRIPTEN_KEEPALIVE
+
 
 // Calculate normal for a face (helper)
 void calculate_normal(const Vertex* v1, const Vertex* v2, const Vertex* v3, float* nx, float* ny, float* nz) {
@@ -129,7 +131,7 @@ void mesh_info_string(const Mesh* mesh, char* buffer, size_t buf_size) {
     }
 }
 
-int main() {
+int graph() {
     Mesh mesh = create_simple_mesh();
 
     // Write OBJ file
@@ -147,5 +149,18 @@ int main() {
     free(mesh.vertices);
     free(mesh.faces);
 
-    return 0;
+    return mesh;
+}
+
+int output() {
+
+    // Read output file 
+    FILE* file = fopen("advanced_output.obj", "r");
+    if (!file) {
+        perror("Failed to open OBJ file");
+        return;
+    }
+
+    return 
+
 }
