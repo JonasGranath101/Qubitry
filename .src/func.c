@@ -23,12 +23,9 @@
 
 EMSCRIPTEN_KEEPALIVE
 
-struct algorithmic {
-
-    char OBJ;
-
-
-}
+typedef struct {
+    float x,y,z;
+} OBJ;
 
 int logic() {
     // Use an AIG network. We'll wrap it in a names_view to easily assign/retrieve names.
