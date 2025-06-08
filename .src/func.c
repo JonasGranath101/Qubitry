@@ -23,9 +23,7 @@
 
 EMSCRIPTEN_KEEPALIVE
 
-typedef struct{
-    float x,y,z;
-} OBJ;
+
 
 int logic() {
     // Use an AIG network. We'll wrap it in a names_view to easily assign/retrieve names.
@@ -169,7 +167,7 @@ int logic() {
 
 void solve ( const std::string& filename,
               const Eigen::MatrixXd& vertices,
-              const std::vector<Eigen::Vector3i>& faces, const start_vertices, const shape_var ) {
+              const std::vector<Eigen::Vector3i>& faces, const start_vertices) {
 
     // Node in vertex.
 
