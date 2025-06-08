@@ -186,7 +186,14 @@ void solve ( const std::string& filename,
 
     // Mesh build. Lambda accuracy "some%".
 
+    for ( i=0;   ;++i ) {
 
+       // Appending vertex line. 
+
+
+						Vertex 	vertices[] = vertices + 
+
+    }
 
     // Logic assessment. 
 
