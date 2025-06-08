@@ -131,7 +131,8 @@ void mesh_info_string(const Mesh* mesh, char* buffer, size_t buf_size) {
     }
 }
 
-int graph() {
+int graph () {
+
     Mesh mesh = create_simple_mesh();
 
     // Write OBJ file
@@ -152,15 +153,34 @@ int graph() {
     return mesh;
 }
 
-int output() {
+int output () {
 
-    // Read output file 
-    FILE* file = fopen("advanced_output.obj", "r");
-    if (!file) {
-        perror("Failed to open OBJ file");
-        return;
+    FILE *fp = fopen("advanced_output.obj", "rb");
+    if (!fp) return NULL;
+
+    // Seek to end to determine file size
+    if (fseek(fp, 0, SEEK_END) != 0) {
+        fclose(fp);
+        return NULL;
+    }
+    long size = ftell(fp);
+    if (size < 0) {
+        fclose(fp);
+        return NULL;
+    }
+    rewind(fp);
+
+    // Allocate buffer (+1 for null terminator)
+    char *buffer = malloc(size + 1);
+    if (!buffer) {
+        fclose(fp);
+        return NULL;
     }
 
-    return 
+    // Read file into buffer
+    size_t read_size = fread(buffer, 1, size, fp);
+    buffer[read_size] = '\0'; // Null-terminate
 
+    fclose(fp);
+    return buffer;
 }
