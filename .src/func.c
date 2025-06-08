@@ -106,3 +106,9 @@ int graph() {
     std::cout << "simple_solve returned: " << result << std::endl;
     return result;
 }
+
+int output () {
+
+    return vertices
+
+}
